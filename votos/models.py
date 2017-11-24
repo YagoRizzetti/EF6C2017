@@ -17,12 +17,15 @@ class Distrito(models.Model):
     cantidad_votantes = models.IntegerField('Cantidad de votantes', default=0)
     latitude = models.DecimalField('Latitud', max_digits=14, decimal_places=10, default=0)
     longitude = models.DecimalField('Latitud', max_digits=14, decimal_places=10, default=0)
-
+    candidato = models.ForignKey(Candidato,'nombre')
 
     def __str__(self):
         return 'Distrito {}'.format(self.nombre)
 
 class Candidato(models.Model):
+    cantidad_votos = models.ForignKey(Votos,'cantidad')
+    nombre = modesl.CharField(max_length=50)
+
     """
     #TODO Completar segun consideraciones del desarrollador
     En este comentario escribir por que se decide modelar de esta
@@ -31,7 +34,8 @@ class Candidato(models.Model):
     pass
 
 
-class Votos(models.Model):
+class Voto(models.Model):
+    cantidad = models.IntegerField()
     """
     #TODO Completar segun consideraciones del desarrollador
     En este comentario escribir por que se decide modelar de esta
