@@ -17,7 +17,7 @@ def resultado_global(request):
     Porcentaje de votos nulos
     Total de votos de la elección
     """
-
+    
     context={}
     context['distritos'] = Distrito.objects.all()
     #TODO TU CODIGO AQUI
@@ -34,11 +34,9 @@ def resultado_distrital(request):
     Total de votos del distrito
     Candidato ganador
     """
-    
+
     context={}
 
-    #TODO TU CODIGO AQUI
-
-def     
+    #TODO TU CODIGO AQUI    
 
     return render(request,'distrital.html',context)
